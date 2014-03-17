@@ -23,7 +23,7 @@ if ( !in_array( substr($info['http_code'],0,1), array('2','3') ) )
 }
 
 // just clean up for the file name
-$file = __DIR__.'/'.str_replace( array('http://', '/'), array('',''), $url ).'.txt';
+$file = '/tmp/downtime/'.str_replace( array('http://', '/'), array('',''), $url ).'.txt';
 
 if ( $status == 'Down' )
 {
