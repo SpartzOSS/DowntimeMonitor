@@ -28,11 +28,12 @@ $file = __DIR__.'/'.str_replace( array('http://', '/'), array('',''), $url ).'.t
 if ( $status == 'Down' )
 {
     // log the current timestamp for future calculations
-    file_put_contents($file, time());
+    file_put_contents($file, time().'|'.$info['http_code']);
 }
 
 // do some calc to prettify the time strings
-$last_downtime_ts = (int) @file_get_contents($file);
+$last_downtime_info = (int) @file_get_contents($file);
+list( $last_downtime_ts, $code ) = explode( '|', $last_downtime_info );
 $now = time(); // call "time()" once to avoid skipping to the next second mid run
 
 $ago = $now - $last_downtime_ts;
