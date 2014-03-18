@@ -52,7 +52,7 @@ if ( $ago < $now )
             break;
 
         case $ago < (60*60*24*3): //  hours
-            $last_downtime = round( $ago/60/24/3, 1 ) . ' hours';
+            $last_downtime = round( $ago/60/24/3, 1 ) . ' hrs';
             break;
 
         case $ago < (60*60*24*30): // days
@@ -60,7 +60,7 @@ if ( $ago < $now )
             break;
 
         case $ago < (60*60*24*365): // months
-            $last_downtime = round( $ago/60/60/365, 1 ) . ' months';
+            $last_downtime = round( $ago/60/60/365, 1 ) . ' mnths';
             break;
 
         default: // years?
