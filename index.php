@@ -88,7 +88,7 @@ foreach ( $urls as $i => $url )
     $data[$i] = array(
                     'url' => str_replace( array('www.','http://', 'https://'), array('',''), $url ),
                     'last_downtime' => $last_downtime,
-                    'response_time' => $response_time . ' ms',
+                    'response_time' => $response_time,
                     'code' => $info['http_code']
     );
 }
