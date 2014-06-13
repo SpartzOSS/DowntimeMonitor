@@ -1,5 +1,6 @@
 <?php
-$url = $_GET['url'] ?: 'http://www.google.com';
+$url = filter_var($_GET['url'], FILTER_VALIDATE_URL) ? $_GET['url'] : 'http://www.google.com';
+
 
 // get the headers and response time
 $ch = curl_init();
