@@ -41,7 +41,6 @@ if ($last_downtime_info) {
 } else {
 	$last_downtime_ts = 0;
 }
-
 $now = time(); // call "time()" once to avoid skipping to the next second mid run
 
 $ago = $now - $last_downtime_ts;
