@@ -34,7 +34,14 @@ if ( $status == 'Down' )
 
 // do some calc to prettify the time strings
 $last_downtime_info = (int) @file_get_contents($file);
-list( $last_downtime_ts, $code ) = explode( '|', $last_downtime_info );
+
+// checking if the log file is still empty (first time run)
+if ($last_downtime_info) {
+	list( $last_downtime_ts, $code ) = explode( '|', $last_downtime_info );
+} else {
+	$last_downtime_ts = 0;
+}
+
 $now = time(); // call "time()" once to avoid skipping to the next second mid run
 
 $ago = $now - $last_downtime_ts;
